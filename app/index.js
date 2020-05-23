@@ -1,8 +1,10 @@
 import React from 'react';
 import EStyleSheet from 'react-native-extended-stylesheet';
+import { Provider } from 'react-redux';
 
 import { View } from 'react-native';
 import Navigator from './config/routes';
+import store from "./config/store";
 
 EStyleSheet.build({
     $textColor: '#0275d8',
@@ -14,8 +16,8 @@ EStyleSheet.build({
     $darkText: '#343434',
 });
 
-function App() {
-    return <Navigator />
-}
-
-export default App;
+export default () => (
+    <Provider store={store}>
+        <Navigator onNavigationStateChange={null} />
+    </Provider>
+);
