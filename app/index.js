@@ -1,9 +1,8 @@
 import React from 'react';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
-//import Home from './screens/Home';
-import CurrencyList from './screens/CurrencyList';
 import { View } from 'react-native';
+import Navigator from './config/routes';
 
 EStyleSheet.build({
     $textColor: '#0275d8',
@@ -16,7 +15,7 @@ EStyleSheet.build({
 });
 
 function App() {
-    return <CurrencyList />
+    return <Navigator />
 }
 
 export default App;

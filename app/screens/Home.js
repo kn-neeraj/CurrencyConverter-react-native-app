@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
 import { StatusBar } from 'react-native';
+import PropTypes from 'prop-types';
 
 import { Container } from '../components/Container';
 import { Logo } from '../components/Logo';
@@ -12,6 +13,9 @@ const TEMP_BASE_PRICE = '100';
 const TEMP_QUOTE_PRICE = '81.72';
 
 class Home extends Component {
+    static propTypes = {
+        navigation: PropTypes.object,
+    };
     state = {
         quote_currency_price: TEMP_QUOTE_PRICE
     }
@@ -21,9 +25,11 @@ class Home extends Component {
         return String(quote_currency);
     }
     handlePressBaseCurrency = () => {
+        this.props.navigation.navigate('CurrencyList', { title: 'Base Currency' });
         console.log('pressed base');
     }
     handlePressQuoteCurrency = () => {
+        this.props.navigation.navigate('CurrencyList', { title: 'Quote Currency' });
         console.log('pressed quote');
     }
     handleTextChange = (text) => {
