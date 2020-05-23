@@ -5,6 +5,7 @@
     "name": "CurrencyConverter",
     "slug": "expo-template-bare",
     "version": "1.0.0",
+    "sdkVersion": "37.0.0",
     "platforms": [
       "ios",
       "android",
@@ -12,6 +13,13 @@
     ],
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "android": {
+      "package": "com.app.currencyconverter",
+      "versionCode": 32
+    },
+    "ios": {
+      "bundleIdentifier": "com.app.currencyconverter"
+    }
   }
 }
