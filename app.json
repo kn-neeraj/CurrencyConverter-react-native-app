@@ -6,6 +6,8 @@
     "slug": "expo-template-bare",
     "version": "1.0.0",
     "sdkVersion": "37.0.0",
+    "orientation": "portrait",
+    "privacy": "public",
     "platforms": [
       "ios",
       "android",
