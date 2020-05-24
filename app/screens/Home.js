@@ -31,11 +31,11 @@ class Home extends Component {
         return String(quote_currency);
     }
     handlePressBaseCurrency = () => {
-        this.props.navigation.navigate('CurrencyList', { title: 'Base Currency' });
+        this.props.navigation.navigate('CurrencyList', { title: 'Base Currency', type: 'base' });
         console.log('pressed base');
     }
     handlePressQuoteCurrency = () => {
-        this.props.navigation.navigate('CurrencyList', { title: 'Quote Currency' });
+        this.props.navigation.navigate('CurrencyList', { title: 'Quote Currency', type: 'quote' });
         console.log('pressed quote');
     }
     handleTextChange = (amount) => {
