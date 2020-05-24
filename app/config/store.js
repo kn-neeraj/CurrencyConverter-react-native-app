@@ -1,15 +1,18 @@
 import { createStore, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
+import createSagaMiddleware from 'redux-saga';
 
 import reducers from '../reducers';
+import rootSaga from './sagas';
 
-const middleware = [];
+const sagaMiddleware = createSagaMiddleware();
+const middleware = [sagaMiddleware];
+
 if (process.env.NODE_ENV === 'development') {
-    console.log("yes dev mode on..")
     middleware.push(logger);
 }
-else {
-    console.log("dev mode not on");
-}
 
-export default createStore(reducers, applyMiddleware(...middleware));
+const store = createStore(reducers, applyMiddleware(...middleware));
+sagaMiddleware.run(rootSaga);
+
+export default store;

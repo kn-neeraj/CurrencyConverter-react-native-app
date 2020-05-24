@@ -8,7 +8,7 @@ import { Container } from '../components/Container';
 import { Logo } from '../components/Logo';
 import { InputWithButton } from '../components/TextInput';
 
-import { changeCurrencyAmount } from '../actions/currencies';
+import { changeCurrencyAmount, getInitialConversion } from '../actions/currencies';
 
 //const TEMP_BASE_CURRENCY = 'USD';
 //const TEMP_QUOTE_CURRENCY = 'GBP';
@@ -25,6 +25,11 @@ class Home extends Component {
         conversionRate: PropTypes.number,
         isFetching: PropTypes.bool,
     };
+
+    componentWillMount() {
+        this.props.dispatch(getInitialConversion());
+    };
+
     handleConversion = (base_currency) => {
         //Assuming US to GBP 
         const quote_currency = 0.8172 * Number(base_currency);
